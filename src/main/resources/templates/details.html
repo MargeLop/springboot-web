@@ -8,7 +8,11 @@
 <body>
     <h1 th:text="${title} + ' details'">Hola mundo</h1>
     <button th:text="Details"></button>
-    <button th:text="MapDetails" onclick="redirectToUrl()"></button>
+    <button th:text="MapDetails" onclick="redirectToUrl()"></button><br/>
+    <a th:href="@{ /list }">Ver listado</a><br/>
+    <a th:href="@{ '/api/params/foo?mensaje=' + ${title} }">Ver mensaje</a><br/>
+    <a th:href="@{ /api/params/foo(mensaje=${title}) }">Ver mensaje 2</a><br/>
+    <a th:href="@{ /api/params/bar(message=${title}, id=123) }">Ver varios</a><br/>
     <ul>
         <li th:text="${user.name}"></li>
         <li th:text="${user.lastname}"></li>
