@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmln:th="http://www.thyleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">New</title>
+</head>
+<body>
+    <h1 th:text="${title + ' mapdetails'}">Hola mundo</h1>
+    <button th:text="Details" onclick="redirectToUrl()"></button>
+    <button th:text="MapDetails"></button>
+    <ul>
+        <li th:text="${user.name}"></li>
+        <li th:text="${user.lastname}"></li>
+        <li th:text="${date}"></li>
+    </ul>   
+
+    <script>
+        function redirectToUrl() {
+            window.location.href = "http://localhost:" + window.location.port + "/details";
+        }
+    </script>     
+</body>
+</html>

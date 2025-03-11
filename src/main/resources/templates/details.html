@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmln:th="http://www.thyleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">New</title>
+</head>
+<body>
+    <h1 th:text="${title} + ' details'">Hola mundo</h1>
+    <button th:text="Details"></button>
+    <button th:text="MapDetails" onclick="redirectToUrl()"></button>
+    <ul>
+        <li th:text="${user.name}"></li>
+        <li th:text="${user.lastname}"></li>
+        <li th:if="${user.email}!=null" th:text="${user.email}"></li>
+        <li th:if="${user.email}==null" th:text="'No tiene email'"></li>
+    </ul>
+
+    <table th:if="${not users.isEmpty()}">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="user : ${users}">
+                <td th:text="${user.name}"></td>
+                <td th:text="${user.lastname}"></td>
+                <td th:if="${not (user.email==null)}" th:text="${user.email}"></td>
+                <td th:if="${user.email}==null" th:text="'-'"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function redirectToUrl() {
+            window.location.href = "http://localhost:" + window.location.port + "/mapdetails";
+        }
+    </script>     
+</body>
+</html>
