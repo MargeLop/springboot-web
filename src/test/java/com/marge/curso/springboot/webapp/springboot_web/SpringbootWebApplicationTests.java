@@ -12,6 +12,6 @@ class SpringbootWebApplicationTests {
 	
 	@Test
 	void evidente() {
-		assertThat("Hola").isEqualTo("Hola");
+		assertThat("cadena").isEqualTo("cadena");
 	}
 }
