@@ -9,5 +9,9 @@ class SpringbootWebApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
+	
+	@Test
+	void evidente() {
+		assertThat("Hola").isEqualTo("Hola");
+	}
 }
